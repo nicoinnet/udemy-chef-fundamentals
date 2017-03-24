@@ -8,13 +8,8 @@
 package 'httpd'
 
 # Make sure index web page gets created.
-file '/var/www/html/index.html' do
-  content "<html><body>
-                      <h1>Hello World!</h1>
-                      <h2>HOSTNAME: #{node['hostname']}</h2>
-                      <h2>IP ADDRESS: #{node['ipaddress']}</h2>
-                </body>
-         </html>"
+template '/var/www/html/index.html' do
+  source 'index.html.erb'
   action :create
 end
 
