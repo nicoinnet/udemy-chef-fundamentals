@@ -15,6 +15,9 @@ package 'ntp'
 template '/etc/motd' do
   action :create
   source 'motd.erb'
+  variables(
+      :name => '-- Chef --'
+  )
   owner 'root'
   group 'root'
   mode '0644'
