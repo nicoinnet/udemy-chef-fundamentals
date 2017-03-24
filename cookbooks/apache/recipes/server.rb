@@ -17,6 +17,11 @@ template '/var/www/html/index.html' do
   action :create
 end
 
+directory "/var/www/mysites" do
+  owner 'apache'
+  recursive true
+end
+
 # Make sure apache server is enabled at startup and started.
 service 'httpd' do
   action [:enable, :start]
