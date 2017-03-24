@@ -7,6 +7,10 @@
 # Make sure apache is installed.
 package 'httpd'
 
+remote_file '/var/www/html/guitar.png' do
+  source 'http://www.guitaraficionado.com/wp-content/uploads/2011/11/edit390FenderHendrix.high.jpg'
+end
+
 # Make sure index web page gets created.
 template '/var/www/html/index.html' do
   source 'index.html.erb'
